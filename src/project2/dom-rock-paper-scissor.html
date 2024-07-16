@@ -64,11 +64,11 @@
          <br><br><br>
           <div id="reset">
                <button class="reset-it" onclick="
-            score.wins=0;             //button to reset the scores
+            score.wins=0;           
             score.loses=0;
             score.ties=0;
 
-            localStorage.removeItem('score')    /*by this the value in reset is not lost after the refreshing*/  
+            localStorage.removeItem('score')      
            
             
              updateScoreElement();
@@ -78,23 +78,23 @@
      
      
       <script>
-      /////////////////
-        let score= JSON.parse(localStorage.getItem     //parse() to  json=>js
+      
+        let score= JSON.parse(localStorage.getItem     
         ('score')) ||{  
            wins:0,
            loses:0,
-           ties:0        //score is declared here
+           ties:0        
            };
      
            updateScoreElement();
            
            
         
-       //////////////
+       
      
-        function playGame(playerMove){   //playerMove=(rock/paper/scissor)
+        function playGame(playerMove){   
      
-           const computerMove=computer();  //computerfuntion is declared in below function
+           const computerMove=computer();  
            
            let result='';
      
@@ -137,7 +137,7 @@
                  score.ties=score.ties+1;
               }
      
-              localStorage.setItem('score',JSON.stringify (score)) ////('score'--to place score,score---what to place) JSON=>J S
+              localStorage.setItem('score',JSON.stringify (score))
                   updateScoreElement();
      
      
@@ -157,7 +157,7 @@
       function updateScoreElement(){
          document.querySelector('.js-score')
            .innerHTML= `Wins:${score.wins},Loses:${score.loses}
-           ,Ties:${score.ties}`;                                //code to display on page
+           ,Ties:${score.ties}`;                                
      
      
      }
@@ -167,7 +167,7 @@
      
      
      
-     function computer(){  //here random no. is generated and is assigned to random no.
+     function computer(){  
      const randomNumber=Math.random();
      let computerMove='';
      
